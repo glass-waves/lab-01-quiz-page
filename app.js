@@ -3,38 +3,38 @@ import { countsAsYes } from "./utils.js";
 const quizButton = document.getElementById('initiate-quiz');
 const secretBox = document.getElementById('result-box');
 
-// console.log('quizButton');
-// console.log('secretBox');
 
-
-// initialize state
 
 // set event listeners to update state and DOM
 quizButton.addEventListener('click', () => {
-    // console.log('button clicked!');
+    //Ask name
     const firstName = prompt('What is your first name?');
     const lastName = prompt('What is your last name?');
 
+    //declare counter variable
     let correctCounter = 0;
-    // console.log(firstName);
-    // console.log(lastName);
 
+    //confirm they want take the quiz
     if (!confirm('Are you sure you would like to take this quiz?')) return;
 
+    //quiz questions
     const firstAnswer = prompt('Is the average lifespan of a Great Pyranese 10-11 years?');
     const secondAnswer = prompt('The Great Pyrenees is the same as a Pyrenean Mastiff');
     const thirdAnswer = prompt('Can Great Pyrenese can be stubborn and hard to train?');
 
-    if (countsAsYes(firstAnswer)) correctCounter++;
-    // console.log(correctCounter);
-    if (!countsAsYes(secondAnswer)) correctCounter++;
-    // console.log(correctCounter);
-    if (countsAsYes(thirdAnswer)) correctCounter++;
-    // console.log(correctCounter);
+    //alert them to the results
+    alert('Look for your quiz results below, fingers crossed!');
 
+    //calculate how many correct answers were given
+    if (countsAsYes(firstAnswer)) correctCounter++;
+    if (!countsAsYes(secondAnswer)) correctCounter++;
+    if (countsAsYes(thirdAnswer)) correctCounter++;
+
+    //convert counter into a rounded percentage
     const correctPercentage = (correctCounter / 3) * 100;
     const roundedPercent = correctPercentage.toFixed(0);
-    console.log(roundedPercent);
+
+    //array of possible result messages
     const results = [
         `Come on ${firstName} ${lastName}, you gotta learn more about Great Pyrenese, you got ${roundedPercent}% right! `,
         `You can do better than that ${firstName} ${lastName}, you only got ${roundedPercent}% right!`,
@@ -42,9 +42,9 @@ quizButton.addEventListener('click', () => {
         `Excellent work ${firstName} ${lastName}, you got ${roundedPercent}% right! You are an expert! `
     ];
 
+    //inject corresponding result message into DOM element
     for (let i = 0; i < 3; i++){
         if (correctCounter === i){
-            console.log(results[i]);
             secretBox.textContent = results[i];
         }
     }
