@@ -37,7 +37,13 @@ h3 {
 }
 ul {
     list-style-type: circle;
-    list-style-position: inside
+    list-style-position: inside;
+    margin-bottom: 20px
+}
+ol {
+    list-style-type: upper-roman;
+    list-style-position: inside;
+    margin-left: 25px;;
 }
 .quiz {
     text-align: center;

@@ -4,7 +4,6 @@ const quizButton = document.getElementById('initiate-quiz');
 const secretBox = document.getElementById('result-box');
 
 
-
 // set event listeners to update state and DOM
 quizButton.addEventListener('click', () => {
     //Ask name
@@ -43,11 +42,35 @@ quizButton.addEventListener('click', () => {
     ];
 
     //inject corresponding result message into DOM element
-    for (let i = 0; i < 3; i++){
+    for (let i = 0; i <= 3; i++){
         if (correctCounter === i){
             secretBox.textContent = results[i];
         }
     }
+    // change style depending on how many correct
+    switch (correctCounter){
+        case 0:
+            secretBox.style.color = 'black';
+            secretBox.style.fontWeight = '500';
+            break;
+        case 1:
+            secretBox.style.color = '#003F91';
+            secretBox.style.fontWeight = '600';
+            break;
+        case 2:
+            secretBox.style.color = 'orange';
+            secretBox.style.fontWeight = '600';
+            break;
+        case 3:
+            secretBox.style.color = '#5DA9E9';
+            secretBox.style.fontWeight = '600';
+            secretBox.style.fontSize = '1.8rem';
+            break;
+
+            
+
+    }
+
 
     
 
