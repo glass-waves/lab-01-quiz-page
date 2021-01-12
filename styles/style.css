@@ -55,6 +55,11 @@ button {
     font-size: 1.2rem;
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 20px;
+    border:1px solid black;
+}
+button:hover {
+    border: 2px solid #003F91;
+    box-shadow: 0px 0px 5px grey;
 }
 #result-box {
     font-size: 1.4rem;;

@@ -71,10 +71,4 @@ quizButton.addEventListener('click', () => {
 
     }
 
-
-    
-
-
-
-
 })
