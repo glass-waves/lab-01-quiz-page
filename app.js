@@ -1,5 +1,5 @@
 // import functions and grab DOM elements
-import { countsAsYes } from "./utils.js";
+import { countsAsYes } from './utils.js';
 const quizButton = document.getElementById('initiate-quiz');
 const secretBox = document.getElementById('result-box');
 
@@ -71,4 +71,4 @@ quizButton.addEventListener('click', () => {
 
     }
 
-})
+});
